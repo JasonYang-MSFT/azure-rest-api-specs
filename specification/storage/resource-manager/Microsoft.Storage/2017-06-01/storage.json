@@ -858,7 +858,8 @@
           "description": "Indicates the type of storage account.",
           "enum": [
             "Storage",
-            "BlobStorage"
+            "BlobStorage",
+            "StorageV2"
           ],
           "x-ms-enum": {
             "name": "Kind",
@@ -1188,7 +1189,8 @@
           "description": "Required. Indicates the type of storage account.",
           "enum": [
             "Storage",
-            "BlobStorage"
+            "BlobStorage",
+            "StorageV2"
           ],
           "x-ms-enum": {
             "name": "Kind",
@@ -1373,7 +1375,8 @@
           "description": "Gets the Kind.",
           "enum": [
             "Storage",
-            "BlobStorage"
+            "BlobStorage",
+            "StorageV2"
           ],
           "x-ms-enum": {
             "name": "Kind",
