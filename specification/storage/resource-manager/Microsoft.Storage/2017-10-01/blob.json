@@ -1,0 +1,656 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "version": "2017-10-01",
+  "x-ms-code-generation-settings": {
+   "name": "StorageManagementClient"
+  },
+  "title": "StorageManagement",
+  "description": "The Azure Storage Management API."
+ },
+ "host": "management.azure.com",
+ "schemes": [
+  "https"
+ ],
+ "paths": {
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default": {
+   "put": {
+    "tags": [
+     "BlobService"
+    ],
+    "operationId": "BlobService_SetServiceProperties",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "parameters": [
+     {
+      "$ref": "#/parameters/ResourceGroupName"
+     },
+     {
+      "name": "accountName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "maxLength": 24,
+      "minLength": 3
+     },
+     {
+      "name": "storageServiceProperties",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/BlobServiceProperties"
+      },
+      "description": "The properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules."
+     },
+     {
+      "$ref": "#/parameters/ApiVersionParameter"
+     },
+     {
+      "$ref": "#/parameters/SubscriptionIdParameter"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   },
+   "get": {
+    "tags": [
+     "BlobService"
+    ],
+    "operationId": "BlobService_GetServiceProperties",
+    "description": "Gets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.",
+    "parameters": [
+     {
+      "$ref": "#/parameters/ResourceGroupName"
+     },
+     {
+      "name": "accountName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "maxLength": 24,
+      "minLength": 3
+     },
+     {
+      "$ref": "#/parameters/ApiVersionParameter"
+     },
+     {
+      "$ref": "#/parameters/SubscriptionIdParameter"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK -- returned the properties of a storage account’s Blob service.",
+      "schema": {
+       "$ref": "#/definitions/BlobServiceProperties"
+      }
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers": {
+   "get": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_List",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "parameters": [
+     {
+      "$ref": "#/parameters/ResourceGroupName"
+     },
+     {
+      "name": "accountName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "maxLength": 24,
+      "minLength": 3
+     },
+     {
+      "name": "storageServiceProperties",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/BlobServiceProperties"
+      },
+      "description": "The properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules."
+     },
+     {
+      "$ref": "#/parameters/ApiVersionParameter"
+     },
+     {
+      "$ref": "#/parameters/SubscriptionIdParameter"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}": {
+   "put": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_CreateOrUpdate",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "parameters": [
+     {
+      "$ref": "#/parameters/ResourceGroupName"
+     },
+     {
+      "name": "accountName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "maxLength": 24,
+      "minLength": 3
+     },
+     {
+      "name": "storageServiceProperties",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/BlobServiceProperties"
+      },
+      "description": "The properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules."
+     },
+     {
+      "$ref": "#/parameters/ApiVersionParameter"
+     },
+     {
+      "$ref": "#/parameters/SubscriptionIdParameter"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   },
+   "patch": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_Update",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "parameters": [
+     {
+      "$ref": "#/parameters/ResourceGroupName"
+     },
+     {
+      "name": "accountName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "maxLength": 24,
+      "minLength": 3
+     },
+     {
+      "name": "storageServiceProperties",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/BlobServiceProperties"
+      },
+      "description": "The properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules."
+     },
+     {
+      "$ref": "#/parameters/ApiVersionParameter"
+     },
+     {
+      "$ref": "#/parameters/SubscriptionIdParameter"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   },
+   "get": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_Get",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "parameters": [
+     {
+      "$ref": "#/parameters/ResourceGroupName"
+     },
+     {
+      "name": "accountName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "maxLength": 24,
+      "minLength": 3
+     },
+     {
+      "name": "storageServiceProperties",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/BlobServiceProperties"
+      },
+      "description": "The properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules."
+     },
+     {
+      "$ref": "#/parameters/ApiVersionParameter"
+     },
+     {
+      "$ref": "#/parameters/SubscriptionIdParameter"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   },
+   "delete": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_Delete",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "parameters": [
+     {
+      "$ref": "#/parameters/ResourceGroupName"
+     },
+     {
+      "name": "accountName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "maxLength": 24,
+      "minLength": 3
+     },
+     {
+      "name": "storageServiceProperties",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/BlobServiceProperties"
+      },
+      "description": "The properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules."
+     },
+     {
+      "$ref": "#/parameters/ApiVersionParameter"
+     },
+     {
+      "$ref": "#/parameters/SubscriptionIdParameter"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/lease": {
+   "post": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_Lease",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "parameters": [
+     {
+      "$ref": "#/parameters/ResourceGroupName"
+     },
+     {
+      "name": "accountName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "maxLength": 24,
+      "minLength": 3
+     },
+     {
+      "name": "storageServiceProperties",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/BlobServiceProperties"
+      },
+      "description": "The properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules."
+     },
+     {
+      "$ref": "#/parameters/ApiVersionParameter"
+     },
+     {
+      "$ref": "#/parameters/SubscriptionIdParameter"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/setLegalHold": {
+   "post": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_SetLegalHold",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/clearLegalHold": {
+   "post": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_ClearLegalHold",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/immutabilityPolicies/default": {
+   "put": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_CreateImmutabilityPolicies",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   },
+   "get": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_GetImmutabilityPolicies",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   },
+   "delete": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_DeleteImmutabilityPolicies",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/immutabilityPolicies/default/lock": {
+   "post": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_LockImmutabilityPolicies",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/immutabilityPolicies/default/extend": {
+   "post": {
+    "tags": [
+     "BlobContainers"
+    ],
+    "operationId": "BlobContainers_ExtendImmutabilityPolicies",
+    "description": "Sets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules. ",
+    "responses": {
+     "200": {
+      "description": "OK -- Sets The properties of a storage account’s Blob service successfully."
+     }
+    },
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "consumes": [
+     "application/json"
+    ]
+   }
+  }
+ },
+ "definitions": {
+  "BlobServiceProperties": {
+   "properties": {
+    "cors": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/CorsRule"
+     },
+     "description": "Specifies a CORS rule for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service."
+    },
+    "defaultServiceVersion": {
+     "type": "string",
+     "description": "DefaultServiceVersion indicates the default version to use for requests to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27 and all more recent versions."
+    }
+   },
+   "description": "The properties of a storage account’s Blob service."
+  },
+  "CorsRule": {
+   "properties": {
+    "allowedOrigins": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Required if CorsRule element is present. A list of origin domains that will be allowed via CORS, or \"*\" to allow all domains"
+    },
+    "allowedMethods": {
+     "type": "string",
+     "enum": [
+      "DELETE",
+      "GET",
+      "HEAD",
+      "MERGE",
+      "POST",
+      "OPTIONS",
+      "PUT"
+     ],
+     "x-ms-enum": {
+      "name": "HTTPMethod",
+      "modelAsString": false
+     },
+     "description": "Required if CorsRule element is present. A list of HTTP methods that are allowed to be executed by the origin."
+    },
+    "maxAgeInSeconds": {
+     "type": "integer",
+     "description": "Required if CorsRule element is present. The number of seconds that the client/browser should cache a preflight response."
+    },
+    "exposedHeaders": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Required if CorsRule element is present. A list of response headers to expose to CORS clients."
+    },
+    "allowedHeaders": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Required if CorsRule element is present. A list of headers allowed to be part of the cross-origin request."
+    }
+   },
+   "description": "Specifies a CORS rule for the Blob service."
+  }
+ },
+ "parameters": {
+  "SubscriptionIdParameter": {
+   "name": "subscriptionId",
+   "in": "path",
+   "required": true,
+   "type": "string",
+   "description": "Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+  },
+  "ApiVersionParameter": {
+   "name": "api-version",
+   "in": "query",
+   "required": true,
+   "type": "string",
+   "description": "Client Api Version."
+  },
+  "ResourceGroupName": {
+   "name": "resourceGroupName",
+   "in": "path",
+   "required": true,
+   "type": "string",
+   "description": "The name of the resource group within the user's subscription. The name is case insensitive.",
+   "pattern": "^[-\\w\\._\\(\\)]+$",
+   "minLength": 1,
+   "maxLength": 90,
+   "x-ms-parameter-location": "method"
+  }
+ },
+ "securityDefinitions": {
+  "azure_auth": {
+   "type": "oauth2",
+   "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+   "flow": "implicit",
+   "description": "Azure Active Directory OAuth2 Flow",
+   "scopes": {
+    "user_impersonation": "impersonate your user account"
+   }
+  }
+ },
+ "security": [
+  {
+   "azure_auth": [
+    "user_impersonation"
+   ]
+  }
+ ]
+}
