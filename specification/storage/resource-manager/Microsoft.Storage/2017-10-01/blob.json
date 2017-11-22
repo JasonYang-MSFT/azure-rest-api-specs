@@ -80,7 +80,7 @@
      "200": {
       "description": "OK -- returned the properties of a storage account’s Blob service.",
       "schema": {
-       "$ref": "#/definitions/BlobServicePropertiesResponse"
+       "$ref": "#/definitions/BlobServiceProperties"
       }
      }
     },
@@ -106,9 +106,6 @@
      },
      {
       "$ref": "#/parameters/AccountName"
-     },
-     {
-      "$ref": "#/parameters/ContainerName"
      },
      {
       "$ref": "#/parameters/ApiVersionParameter"
@@ -157,7 +154,7 @@
       "in": "body",
       "required": true,
       "schema": {
-       "$ref": "#/definitions/ContainerCreateProperties"
+       "$ref": "#/definitions/ContainerProperties"
       },
       "description": "TODO"
      },
@@ -170,7 +167,11 @@
     ],
     "responses": {
      "200": {
-      "description": "OK -- TODO"
+      "description": "OK -- TODO",
+      "schema": {
+       "$ref": "#/definitions/ContainerProperties",
+       "description": "TODO"
+      }
      }
     },
     "produces": [
@@ -202,7 +203,7 @@
       "in": "body",
       "required": true,
       "schema": {
-       "$ref": "#/definitions/ContainerUpdateProperties"
+       "$ref": "#/definitions/ContainerProperties"
       },
       "description": "TODO"
      },
@@ -215,7 +216,11 @@
     ],
     "responses": {
      "200": {
-      "description": "OK -- TODO."
+      "description": "OK -- TODO.",
+      "schema": {
+       "$ref": "#/definitions/ContainerProperties",
+       "description": "TODO"
+      }
      }
     },
     "produces": [
@@ -253,7 +258,7 @@
      "200": {
       "description": "OK -- TODO.",
       "schema": {
-       "$ref": "#/definitions/BlobContainerProperties"
+       "$ref": "#/definitions/ContainerProperties"
       }
      }
     },
@@ -662,7 +667,7 @@
   }
  },
  "definitions": {
-  "BlobServiceProperties": {
+  "BlobServicePropertiesSetParameters": {
    "properties": {
     "storageServiceProperties": {
      "properties": {
@@ -682,9 +687,14 @@
      "description": "The properties of a storage account’s Blob service."
     }
    },
+   "allOf": [
+    {
+     "$ref": "#/definitions/BlobResource"
+    }
+   ],
    "description": "The properties of a storage account’s Blob service."
   },
-  "BlobServicePropertiesResponse": {
+  "BlobServiceProperties": {
    "properties": {
     "properties": {
      "properties": {
@@ -701,21 +711,15 @@
       }
      },
      "x-ms-client-flatten": true,
+     "x-ms-client-name": "BlobServiceProperties",
      "description": "The properties of a storage account’s Blob service."
-    },
-    "id": {
-     "type": "string",
-     "readOnly": true
-    },
-    "name": {
-     "type": "string",
-     "readOnly": true
-    },
-    "type": {
-     "type": "string",
-     "readOnly": true
     }
    },
+   "allOf": [
+    {
+     "$ref": "#/definitions/BlobResource"
+    }
+   ],
    "description": "The properties of a storage account’s Blob service."
   },
   "CorsRule": {
@@ -765,61 +769,33 @@
    },
    "description": "Specifies a CORS rule for the Blob service."
   },
-  "ContainerCreateProperties": {
-   "properties": {
-    "containerMeatadata": {
-     "type": "object",
-     "additionalProperties": {
-      "type": "string"
-     },
-     "description": "TODO"
-    },
-    "publicAccess": {
-     "type": "string",
-     "enum": [
-      "container",
-      "blob"
-     ],
-     "x-ms-enum": {
-      "name": "PublicAccess",
-      "modelAsString": false
-     },
-     "description": "TODO"
-    }
-   },
-   "required": [
-    "containerMeatadata",
-    "publicAccess"
-   ],
-   "description": "TODO"
-  },
-  "ContainerUpdateProperties": {
-   "properties": {
-    "containerMeatadata": {
-     "type": "object",
-     "additionalProperties": {
-      "type": "string"
-     },
-     "description": "TODO"
-    },
-    "publicAccess": {
-     "type": "string",
-     "enum": [
-      "container",
-      "blob"
-     ],
-     "x-ms-enum": {
-      "name": "PublicAccess",
-      "modelAsString": false
-     },
-     "description": "TODO"
-    }
-   },
-   "description": "TODO"
-  },
   "BlobContainerProperties": {
    "properties": {
-    "containerMeatadata": {
+    "containerMetadata": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     },
+     "description": "TODO"
+    },
+    "publicAccess": {
+     "type": "string",
+     "enum": [
+      "container",
+      "blob"
+     ],
+     "x-ms-enum": {
+      "name": "PublicAccess",
+      "modelAsString": false
+     },
+     "description": "TODO"
+    }
+   },
+   "description": "TODO"
+  },
+  "ContainerProperties": {
+   "properties": {
+    "containerMetadata": {
      "type": "object",
      "additionalProperties": {
       "type": "string"
@@ -839,6 +815,7 @@
      "description": "TODO"
     },
     "immutabilityPolicy": {
+     "readOnly": true,
      "properties": {
       "properties": {
        "$ref": "#/definitions/ImmutabilityPolicyProperty",
@@ -848,10 +825,16 @@
      "description": "TODO"
     },
     "LegalHold": {
+     "readOnly": true,
      "$ref": "#/definitions/LegalHold",
      "description": "TODO"
     }
    },
+   "allOf": [
+    {
+     "$ref": "#/definitions/BlobResource"
+    }
+   ],
    "description": "TODO"
   },
   "ImmutabilityPolicyProperty": {
@@ -880,22 +863,16 @@
   },
   "ImmutabilityPolicy": {
    "properties": {
-    "id": {
-     "type": "string",
-     "description": "TODO"
-    },
-    "name": {
-     "type": "string",
-     "description": "TODO"
-    },
-    "type": {
-     "type": "string"
-    },
     "properties": {
      "$ref": "#/definitions/ImmutabilityPolicyProperty",
      "x-ms-client-flatten": true
     }
    },
+   "allOf": [
+    {
+     "$ref": "#/definitions/BlobResource"
+    }
+   ],
    "required": [
     "properties"
    ],
@@ -920,20 +897,16 @@
   },
   "ListContainerItem": {
    "properties": {
-    "id": {
-     "type": "string"
-    },
-    "name": {
-     "type": "string"
-    },
-    "type": {
-     "type": "string"
-    },
     "properties": {
-     "$ref": "#/definitions/BlobContainerProperties",
+     "$ref": "#/definitions/ContainerProperties",
      "x-ms-client-flatten": true
     }
    },
+   "allOf": [
+    {
+     "$ref": "#/definitions/BlobResource"
+    }
+   ],
    "description": "TODO"
   },
   "ListContainerItems": {
@@ -947,6 +920,27 @@
     }
    },
    "description": "TODO"
+  },
+  "BlobResource": {
+   "properties": {
+    "id": {
+     "readOnly": true,
+     "type": "string",
+     "description": "Resource Id"
+    },
+    "name": {
+     "readOnly": true,
+     "type": "string",
+     "description": "Resource name"
+    },
+    "type": {
+     "readOnly": true,
+     "type": "string",
+     "description": "Resource type"
+    }
+   },
+   "x-ms-azure-resource": true,
+   "description": "Describes a storage resource."
   }
  },
  "parameters": {
