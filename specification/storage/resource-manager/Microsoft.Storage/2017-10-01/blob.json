@@ -810,7 +810,8 @@
     },
     "immutabilityPolicy": {
      "readOnly": true,
-     "$ref": "#/definitions/ImmutabilityPolicy",
+     "$ref": "#/definitions/ImmutabilityPolicyProperties",
+     "x-ms-client-name": "ImmutabilityPolicy",
      "description": "TODO"
     },
     "LegalHold": {
@@ -826,6 +827,7 @@
     "properties": {
      "$ref": "#/definitions/ContainerProperties",
      "x-ms-client-flatten": true,
+     "x-ms-client-name": "ContainerProperties",
      "description": "TODO"
     }
    },
@@ -859,6 +861,15 @@
    "required": [
     "ImmutabilityPeriodSinceCreationInDays"
    ],
+   "description": "TODO"
+  },
+  "ImmutabilityPolicyProperties": {
+   "properties": {
+    "properties": {
+     "$ref": "#/definitions/ImmutabilityPolicyProperty",
+     "x-ms-client-flatten": true
+    }
+   },
    "description": "TODO"
   },
   "ImmutabilityPolicy": {
