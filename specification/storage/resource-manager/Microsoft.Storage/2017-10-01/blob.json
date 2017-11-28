@@ -826,15 +826,15 @@
        "description": "TODO"
       }
      },
+     "allOf": [
+      {
+       "$ref": "#/definitions/BlobResource"
+      }
+     ],
      "x-ms-client-flatten": true,
      "description": "TODO"
     }
    },
-   "allOf": [
-    {
-     "$ref": "#/definitions/BlobResource"
-    }
-   ],
    "description": "TODO"
   },
   "ImmutabilityPolicyProperty": {
@@ -845,6 +845,7 @@
     },
     "State": {
      "type": "string",
+     "readOnly": true,
      "enum": [
       "Locked",
       "Unlocked"
