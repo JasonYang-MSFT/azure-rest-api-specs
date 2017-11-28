@@ -557,7 +557,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK -- TODO."
+      "description": "OK -- TODO.",
+      "schema": {
+       "$ref": "#/definitions/ImmutabilityPolicy"
+      }
      }
     },
     "produces": [
