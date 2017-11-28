@@ -154,7 +154,7 @@
       "in": "body",
       "required": true,
       "schema": {
-       "$ref": "#/definitions/ContainerProperties"
+       "$ref": "#/definitions/BlobContainer"
       },
       "description": "TODO"
      },
@@ -169,7 +169,7 @@
      "200": {
       "description": "OK -- TODO",
       "schema": {
-       "$ref": "#/definitions/ContainerProperties",
+       "$ref": "#/definitions/BlobContainer",
        "description": "TODO"
       }
      }
@@ -203,7 +203,7 @@
       "in": "body",
       "required": true,
       "schema": {
-       "$ref": "#/definitions/ContainerProperties"
+       "$ref": "#/definitions/BlobContainer"
       },
       "description": "TODO"
      },
@@ -218,7 +218,7 @@
      "200": {
       "description": "OK -- TODO.",
       "schema": {
-       "$ref": "#/definitions/ContainerProperties",
+       "$ref": "#/definitions/BlobContainer",
        "description": "TODO"
       }
      }
@@ -787,7 +787,7 @@
    },
    "description": "TODO"
   },
-  "ContainerPropertiesProperties": {
+  "ContainerProperties": {
    "properties": {
     "containerMetadata": {
      "type": "object",
@@ -821,10 +821,10 @@
    },
    "description": "TODO"
   },
-  "ContainerProperties": {
+  "BlobContainer": {
    "properties": {
     "properties": {
-     "$ref": "#/definitions/ContainerPropertiesProperties",
+     "$ref": "#/definitions/ContainerProperties",
      "x-ms-client-flatten": true,
      "description": "TODO"
     }
