@@ -479,7 +479,7 @@
      {
       "name": "If-Match",
       "in": "header",
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "The entity state (ETag) version of the immutability policy to update. A value of \"*\" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied."
      }
@@ -525,7 +525,7 @@
      {
       "name": "If-Match",
       "in": "header",
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "The entity state (ETag) version of the immutability policy to update. A value of \"*\" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied."
      }
@@ -571,7 +571,7 @@
      {
       "name": "If-Match",
       "in": "header",
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "The entity state (ETag) version of the immutability policy to update. A value of \"*\" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied."
      }
@@ -619,7 +619,7 @@
      {
       "name": "If-Match",
       "in": "header",
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "The entity state (ETag) version of the immutability policy to update. A value of \"*\" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied."
      }
@@ -675,7 +675,7 @@
      {
       "name": "If-Match",
       "in": "header",
-      "required": false,
+      "required": true,
       "type": "string",
       "description": "The entity state (ETag) version of the immutability policy to update. A value of \"*\" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied."
      }
@@ -803,7 +803,52 @@
   },
   "ContainerProperties": {
    "properties": {
-    "containerMetadata": {
+    "etag": {
+     "type": "string"
+    },
+    "lastModifiedTime": {
+     "type": "string"
+    },
+    "leaseStatus": {
+     "type": "string",
+     "enum": [
+      "locked",
+      "unlocked"
+     ],
+     "x-ms-enum": {
+      "name": "LeaseStatus",
+      "modelAsString": false
+     },
+     "description": "TODO"
+    },
+    "leaseState": {
+     "type": "string",
+     "enum": [
+      "available",
+      "leased",
+      "expired",
+      "breaking",
+      "broken"
+     ],
+     "x-ms-enum": {
+      "name": "LeaseState",
+      "modelAsString": false
+     },
+     "description": "TODO"
+    },
+    "leaseDuration": {
+     "type": "string",
+     "enum": [
+      "infinite",
+      "fixed"
+     ],
+     "x-ms-enum": {
+      "name": "LeaseDuration",
+      "modelAsString": false
+     },
+     "description": "TODO"
+    },
+    "metadata": {
      "type": "object",
      "additionalProperties": {
       "type": "string"
