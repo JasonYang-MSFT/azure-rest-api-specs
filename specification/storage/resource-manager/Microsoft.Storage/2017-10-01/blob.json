@@ -810,12 +810,7 @@
     },
     "immutabilityPolicy": {
      "readOnly": true,
-     "properties": {
-      "properties": {
-       "$ref": "#/definitions/ImmutabilityPolicyProperty",
-       "x-ms-client-flatten": true
-      }
-     },
+     "$ref": "#/definitions/ImmutabilityPolicy",
      "description": "TODO"
     },
     "LegalHold": {
@@ -839,7 +834,6 @@
      "$ref": "#/definitions/BlobResource"
     }
    ],
-   "x-ms-client-name": "ContainerProperty",
    "description": "TODO"
   },
   "ImmutabilityPolicyProperty": {
