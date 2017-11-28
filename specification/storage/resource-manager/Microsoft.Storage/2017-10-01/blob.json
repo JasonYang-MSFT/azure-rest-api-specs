@@ -369,14 +369,11 @@
       "$ref": "#/parameters/SubscriptionIdParameter"
      },
      {
-      "name": "Tags",
+      "name": "LegalHold",
       "in": "body",
       "required": true,
       "schema": {
-       "type": "array",
-       "items": {
-        "type": "string"
-       }
+       "$ref": "#/definitions/LegalHold"
       },
       "description": "TODO"
      }
@@ -422,14 +419,11 @@
       "$ref": "#/parameters/SubscriptionIdParameter"
      },
      {
-      "name": "Tags",
+      "name": "LegalHold",
       "in": "body",
       "required": true,
       "schema": {
-       "type": "array",
-       "items": {
-        "type": "string"
-       }
+       "$ref": "#/definitions/LegalHold"
       },
       "description": "TODO"
      }
