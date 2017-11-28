@@ -832,7 +832,8 @@
       }
      ],
      "x-ms-client-flatten": true,
-     "description": "TODO"
+     "description": "TODO",
+     "x-ms-client-name": "ContainerProperty"
     }
    },
    "description": "TODO"
