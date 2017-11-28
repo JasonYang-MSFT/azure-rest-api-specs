@@ -258,7 +258,7 @@
      "200": {
       "description": "OK -- TODO.",
       "schema": {
-       "$ref": "#/definitions/ContainerProperties"
+       "$ref": "#/definitions/BlobContainer"
       }
      }
     },
@@ -762,30 +762,6 @@
     }
    },
    "description": "Specifies a CORS rule for the Blob service."
-  },
-  "BlobContainerProperties": {
-   "properties": {
-    "containerMetadata": {
-     "type": "object",
-     "additionalProperties": {
-      "type": "string"
-     },
-     "description": "TODO"
-    },
-    "publicAccess": {
-     "type": "string",
-     "enum": [
-      "container",
-      "blob"
-     ],
-     "x-ms-enum": {
-      "name": "PublicAccess",
-      "modelAsString": false
-     },
-     "description": "TODO"
-    }
-   },
-   "description": "TODO"
   },
   "ContainerProperties": {
    "properties": {
