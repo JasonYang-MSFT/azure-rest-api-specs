@@ -789,38 +789,44 @@
   },
   "ContainerProperties": {
    "properties": {
-    "containerMetadata": {
-     "type": "object",
-     "additionalProperties": {
-      "type": "string"
-     },
-     "description": "TODO"
-    },
-    "publicAccess": {
-     "type": "string",
-     "enum": [
-      "container",
-      "blob"
-     ],
-     "x-ms-enum": {
-      "name": "PublicAccess",
-      "modelAsString": false
-     },
-     "description": "TODO"
-    },
-    "immutabilityPolicy": {
-     "readOnly": true,
+    "properties": {
      "properties": {
-      "properties": {
-       "$ref": "#/definitions/ImmutabilityPolicyProperty",
-       "x-ms-client-flatten": true
+      "containerMetadata": {
+       "type": "object",
+       "additionalProperties": {
+        "type": "string"
+       },
+       "description": "TODO"
+      },
+      "publicAccess": {
+       "type": "string",
+       "enum": [
+        "container",
+        "blob"
+       ],
+       "x-ms-enum": {
+        "name": "PublicAccess",
+        "modelAsString": false
+       },
+       "description": "TODO"
+      },
+      "immutabilityPolicy": {
+       "readOnly": true,
+       "properties": {
+        "properties": {
+         "$ref": "#/definitions/ImmutabilityPolicyProperty",
+         "x-ms-client-flatten": true
+        }
+       },
+       "description": "TODO"
+      },
+      "LegalHold": {
+       "readOnly": true,
+       "$ref": "#/definitions/LegalHold",
+       "description": "TODO"
       }
      },
-     "description": "TODO"
-    },
-    "LegalHold": {
-     "readOnly": true,
-     "$ref": "#/definitions/LegalHold",
+     "x-ms-client-flatten": true,
      "description": "TODO"
     }
    },
