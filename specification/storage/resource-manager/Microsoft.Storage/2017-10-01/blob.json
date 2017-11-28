@@ -787,54 +787,58 @@
    },
    "description": "TODO"
   },
+  "ContainerPropertiesProperties": {
+   "properties": {
+    "containerMetadata": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     },
+     "description": "TODO"
+    },
+    "publicAccess": {
+     "type": "string",
+     "enum": [
+      "container",
+      "blob"
+     ],
+     "x-ms-enum": {
+      "name": "PublicAccess",
+      "modelAsString": false
+     },
+     "description": "TODO"
+    },
+    "immutabilityPolicy": {
+     "readOnly": true,
+     "properties": {
+      "properties": {
+       "$ref": "#/definitions/ImmutabilityPolicyProperty",
+       "x-ms-client-flatten": true
+      }
+     },
+     "description": "TODO"
+    },
+    "LegalHold": {
+     "readOnly": true,
+     "$ref": "#/definitions/LegalHold",
+     "description": "TODO"
+    }
+   },
+   "description": "TODO"
+  },
   "ContainerProperties": {
    "properties": {
     "properties": {
-     "properties": {
-      "containerMetadata": {
-       "type": "object",
-       "additionalProperties": {
-        "type": "string"
-       },
-       "description": "TODO"
-      },
-      "publicAccess": {
-       "type": "string",
-       "enum": [
-        "container",
-        "blob"
-       ],
-       "x-ms-enum": {
-        "name": "PublicAccess",
-        "modelAsString": false
-       },
-       "description": "TODO"
-      },
-      "immutabilityPolicy": {
-       "readOnly": true,
-       "properties": {
-        "properties": {
-         "$ref": "#/definitions/ImmutabilityPolicyProperty",
-         "x-ms-client-flatten": true
-        }
-       },
-       "description": "TODO"
-      },
-      "LegalHold": {
-       "readOnly": true,
-       "$ref": "#/definitions/LegalHold",
-       "description": "TODO"
-      }
-     },
-     "allOf": [
-      {
-       "$ref": "#/definitions/BlobResource"
-      }
-     ],
-     "description": "TODO",
-     "x-ms-client-flatten": true
+     "$ref": "#/definitions/ContainerPropertiesProperties",
+     "x-ms-client-flatten": true,
+     "description": "TODO"
     }
    },
+   "allOf": [
+    {
+     "$ref": "#/definitions/BlobResource"
+    }
+   ],
    "x-ms-client-name": "ContainerProperty",
    "description": "TODO"
   },
