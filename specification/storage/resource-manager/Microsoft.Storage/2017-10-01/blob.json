@@ -804,13 +804,17 @@
   "ContainerProperties": {
    "properties": {
     "etag": {
-     "type": "string"
+     "type": "string",
+     "readOnly": true
     },
     "lastModifiedTime": {
-     "type": "string"
+     "type": "string",
+     "format": "date-time",
+     "readOnly": true
     },
     "leaseStatus": {
      "type": "string",
+     "readOnly": true,
      "enum": [
       "locked",
       "unlocked"
@@ -823,6 +827,7 @@
     },
     "leaseState": {
      "type": "string",
+     "readOnly": true,
      "enum": [
       "available",
       "leased",
@@ -838,6 +843,7 @@
     },
     "leaseDuration": {
      "type": "string",
+     "readOnly": true,
      "enum": [
       "infinite",
       "fixed"
