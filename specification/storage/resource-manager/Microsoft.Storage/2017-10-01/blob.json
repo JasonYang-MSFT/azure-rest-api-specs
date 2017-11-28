@@ -803,6 +803,18 @@
   },
   "ContainerProperties": {
    "properties": {
+    "publicAccess": {
+     "type": "string",
+     "enum": [
+      "container",
+      "blob"
+     ],
+     "x-ms-enum": {
+      "name": "PublicAccess",
+      "modelAsString": false
+     },
+     "description": "TODO"
+    },
     "etag": {
      "type": "string",
      "readOnly": true
@@ -858,18 +870,6 @@
      "type": "object",
      "additionalProperties": {
       "type": "string"
-     },
-     "description": "TODO"
-    },
-    "publicAccess": {
-     "type": "string",
-     "enum": [
-      "container",
-      "blob"
-     ],
-     "x-ms-enum": {
-      "name": "PublicAccess",
-      "modelAsString": false
      },
      "description": "TODO"
     },
