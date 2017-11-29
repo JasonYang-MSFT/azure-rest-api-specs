@@ -489,6 +489,12 @@
       "description": "OK -- TODO.",
       "schema": {
        "$ref": "#/definitions/ImmutabilityPolicy"
+      },
+      "headers": {
+       "ETag": {
+        "description": "The ETag HTTP response header. This is an opaque string. You can use it to detect whether the resource has changed between requests. In particular, you can pass the ETag to one of the If-Match or If-None-Match headers.",
+        "type": "string"
+       }
       }
      }
     },
@@ -525,7 +531,7 @@
      {
       "name": "If-Match",
       "in": "header",
-      "required": true,
+      "required": false,
       "type": "string",
       "description": "The entity state (ETag) version of the immutability policy to update. A value of \"*\" can be used to apply the operation only if the immutability policy already exists. If omitted, this operation will always be applied."
      }
