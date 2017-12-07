@@ -541,6 +541,12 @@
       "description": "OK -- TODO.",
       "schema": {
        "$ref": "#/definitions/ImmutabilityPolicy"
+      },
+      "headers": {
+       "ETag": {
+        "description": "The ETag HTTP response header. This is an opaque string. You can use it to detect whether the resource has changed between requests. In particular, you can pass the ETag to one of the If-Match or If-None-Match headers.",
+        "type": "string"
+       }
       }
      }
     },
@@ -587,6 +593,12 @@
       "description": "OK -- TODO.",
       "schema": {
        "$ref": "#/definitions/ImmutabilityPolicy"
+      },
+      "headers": {
+       "ETag": {
+        "description": "The ETag HTTP response header. This is an opaque string. You can use it to detect whether the resource has changed between requests. In particular, you can pass the ETag to one of the If-Match or If-None-Match headers.",
+        "type": "string"
+       }
       }
      }
     },
@@ -635,6 +647,12 @@
       "description": "OK -- TODO.",
       "schema": {
        "$ref": "#/definitions/ImmutabilityPolicy"
+      },
+      "headers": {
+       "ETag": {
+        "description": "The ETag HTTP response header. This is an opaque string. You can use it to detect whether the resource has changed between requests. In particular, you can pass the ETag to one of the If-Match or If-None-Match headers.",
+        "type": "string"
+       }
       }
      }
     },
@@ -691,6 +709,12 @@
       "description": "OK -- TODO.",
       "schema": {
        "$ref": "#/definitions/ImmutabilityPolicy"
+      },
+      "headers": {
+       "ETag": {
+        "description": "The ETag HTTP response header. This is an opaque string. You can use it to detect whether the resource has changed between requests. In particular, you can pass the ETag to one of the If-Match or If-None-Match headers.",
+        "type": "string"
+       }
       }
      }
     },
@@ -821,10 +845,6 @@
      },
      "description": "TODO"
     },
-    "etag": {
-     "type": "string",
-     "readOnly": true
-    },
     "lastModifiedTime": {
      "type": "string",
      "format": "date-time",
@@ -904,7 +924,7 @@
    },
    "allOf": [
     {
-     "$ref": "#/definitions/BlobResource"
+     "$ref": "#/definitions/BlobResourceWithEtag"
     }
    ],
    "description": "TODO"
@@ -952,7 +972,7 @@
    },
    "allOf": [
     {
-     "$ref": "#/definitions/BlobResource"
+     "$ref": "#/definitions/BlobResourceWithEtag"
     }
    ],
    "required": [
@@ -1019,6 +1039,31 @@
      "readOnly": true,
      "type": "string",
      "description": "Resource type"
+    }
+   },
+   "x-ms-azure-resource": true,
+   "description": "Describes a storage resource."
+  },
+  "BlobResourceWithEtag": {
+   "properties": {
+    "id": {
+     "readOnly": true,
+     "type": "string",
+     "description": "Resource Id"
+    },
+    "name": {
+     "readOnly": true,
+     "type": "string",
+     "description": "Resource name"
+    },
+    "type": {
+     "readOnly": true,
+     "type": "string",
+     "description": "Resource type"
+    },
+    "etag": {
+     "type": "string",
+     "readOnly": true
     }
    },
    "x-ms-azure-resource": true,
