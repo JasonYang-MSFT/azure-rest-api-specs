@@ -875,7 +875,7 @@
      "x-ms-client-name": "ImmutabilityPolicy",
      "description": "TODO"
     },
-    "LegalHold": {
+    "legalHold": {
      "readOnly": true,
      "$ref": "#/definitions/LegalHold",
      "description": "TODO"
@@ -976,14 +976,14 @@
    },
    "allOf": [
     {
-     "$ref": "#/definitions/BlobResource"
+     "$ref": "#/definitions/BlobResourceWithEtag"
     }
    ],
    "description": "TODO"
   },
   "ListContainerItems": {
    "properties": {
-    "blobContainers": {
+    "value": {
      "type": "array",
      "items": {
       "$ref": "#/definitions/ListContainerItem"
